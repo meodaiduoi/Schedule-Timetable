@@ -10,7 +10,7 @@ Schedule:
 class Schedule:
     def __init__(self, data: Data):
         self._data = data
-        self._classes = [] # type: Class
+        self._classes = [Class]
         self._conflict = 0
         self._fitness = -1
         self._class_number = 0

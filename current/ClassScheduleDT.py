@@ -40,7 +40,6 @@ class Date:
     def __str__(self):
         return str('Day: ' + self._day + ' Time' + self._time)
 
-
 '''
 Meeting time
 
