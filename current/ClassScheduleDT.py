@@ -1,26 +1,10 @@
 '''
-Course:
-
-'''
-class Course:
-    def __init__(self, number, name, instructor, max_number_of_students):
-        self._number = number
-        self._name = name
-        self._instructor = instructor
-        self._max_students = max_number_of_students
-
-    def getMaxStudent(self): return self._max_students
-    def getInstructor(self): return self._instructor
-    def getName(self): return self._name
-    def __str__(self): return self.name
-
-'''
 Deparment:
 
 '''
 class Department:
-    def __init__(self, name: str, course: Course):
-        self._name = name
+    def __init__(self, id: str, course: Course):
+        self._name = id
         self._course = course
 
     def getName(self): return self._name
@@ -30,7 +14,7 @@ class Department:
 Date:
 '''
 class Date:
-    def __init__(self, day, time_start, time_end) -> None:
+    def __init__(self, day, time):
         self._day
         self._time
 
@@ -73,10 +57,26 @@ class Instructor:
     def __init__(self, id, name):
         self.id = id
         self.name = name
+     
+'''
+Course:
 
 '''
-Class
+class Course:
+    def __init__(self, id, name: str, instructor: Instructor, max_number_of_students: int):
+        self._number = id
+        self._name = name
+        self._instructor = instructor
+        self._max_students = max_number_of_students
 
+    def getMaxStudent(self): return self._max_students
+    def getInstructor(self): return self._instructor
+    def getName(self): return self._name
+    def __str__(self): return self.name
+
+'''
+Class:
+After Scheduling we have classes
 '''
 class Class:
     def __init__(self, id, department: Department, course: Course) -> None:
@@ -110,3 +110,4 @@ class Class:
     def __str__(self):
         return str(self._dept.getName()) + ',' +str(self._course.getNumber()) + ',' + \
             str(self._room.getNumber()) + ',' + str(self._instructor.getId()) + ',' + str(self._meeting_time.getId())
+       

@@ -1,18 +1,23 @@
 import pandas as pd
 
-from current.ClassScheduleDT import Department
+from ClassScheduleDT import *
 
 '''
 DataPhaser:
 '''
 class DataPhaser:
-    def __init__(self, room_csv_path, meeting_time_csv_path, instructor_csv_path: str):
+    def __init__(self, room_csv_path: str, meeting_time_csv_path: str, instructor_csv_path: str):
         _room_df = pd.read_csv(room_csv_path)
         _mtt_df = pd.read_csv(meeting_time_csv_path)
         _instructor = pd.read_csv(instructor_csv_path)
+        
+        
+    def initilizer(self):
+        pass
 
     def getRoom(self):
-        pass
+        for 
+        return room
 
     def getMeetingTime(self):
         pass
