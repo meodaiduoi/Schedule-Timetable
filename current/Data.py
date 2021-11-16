@@ -6,17 +6,18 @@ from ClassScheduleDT import *
 DataPhaser:
 '''
 class DataPhaser:
+    
     def __init__(self, room_csv_path: str, meeting_time_csv_path: str, instructor_csv_path: str):
-        _room_df = pd.read_csv(room_csv_path)
-        _mtt_df = pd.read_csv(meeting_time_csv_path)
-        _instructor = pd.read_csv(instructor_csv_path)
-        
-        
-    def initilizer(self):
-        pass
+        self._room_df = pd.read_csv(room_csv_path)
+        self._mtt_df = pd.read_csv(meeting_time_csv_path)
+        self._room_df.head(0)
 
+        self._room_
+    def initilizer(self):
+        for i in _room_df: 
+            room: Room = Room(self._room_df., self._room_df['seat_capacity'][i].values())
+    
     def getRoom(self):
-        for 
         return room
 
     def getMeetingTime(self):

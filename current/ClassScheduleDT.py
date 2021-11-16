@@ -1,16 +1,4 @@
 '''
-Deparment:
-
-'''
-class Department:
-    def __init__(self, id: str, course: Course):
-        self._name = id
-        self._course = course
-
-    def getName(self): return self._name
-    def getCourse(self): return self._course
-
-'''
 Date:
 '''
 class Date:
@@ -73,6 +61,18 @@ class Course:
     def getInstructor(self): return self._instructor
     def getName(self): return self._name
     def __str__(self): return self.name
+    
+'''
+Deparment:
+
+'''
+class Department:
+    def __init__(self, id: str, course):
+        self._name = id
+        self._course = course
+
+    def getName(self): return self._name
+    def getCourse(self): return self._course
 
 '''
 Class:

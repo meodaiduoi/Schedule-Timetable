@@ -51,10 +51,16 @@ class GeneticAlgorithms:
         return mutate_schedule
 
     '''
-
+    25:06
     '''
     def _crossoverSchedule(self, schedule1: Schedule, schedule2: Schedule):
-        crossover_schedule = Schedule.initialize()
+        crossover_schedule: Schedule = Schedule.initialize()
+        for i in range(0, len(crossover_schedule.getClasses())):
+            if (rnd.random() > 0.5):
+                crossover_schedule.getClasses()[i] = schedule1.getClasses()[i]
+            else:
+                crossover_schedule.getClasses()[i] = schedule2.getClasses()[i]
+        return crossover_schedule          
 
     '''
 
