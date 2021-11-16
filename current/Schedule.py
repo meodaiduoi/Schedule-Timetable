@@ -10,7 +10,7 @@ Schedule:
 class Schedule:
     def __init__(self, data: Data):
         self._data = data
-        self._classes = [Class]
+        self._classes: list[Class] = []
         self._conflict = 0
         self._fitness = -1
         self._class_number = 0
@@ -31,7 +31,7 @@ class Schedule:
 
     def calculateFitness(self):
         self._conflict = 0
-        classes = self.getClasses()
+        classes: list[Class] = self.getClasses()
 
         for i in range(0, len(classes)):
             if (classes[i].getRoom().getCapacity() < classes[i].getCourse().getMaxStudent()):
@@ -51,10 +51,10 @@ class Schedule:
 
     def initialize(self):
 
-        depts = self._data.getDepts() # type: Department
+        depts: list[Department] = self._data.getDepartment()
 
         for i in range(0, len(depts)):
-            course = depts[i].getCrouse() # type: Course
+            course = depts[i].getCourse()
             for j in range(0, len(course)):
                 new_class = Class(self._class_number, depts[i], course[j])
                 self._class_number += 1

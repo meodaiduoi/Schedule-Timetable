@@ -1,5 +1,4 @@
 import pandas as pd
-
 from ClassScheduleDT import *
 class Data:
     
@@ -18,14 +17,14 @@ class Data:
         
        
     def _getRoom(self):
-        rooms = []
+        rooms: list[Room] = []
         for i in range(len(self._room_df)):
             rooms.append(Room(self._room_df.iloc[i]['id'],
                               self._room_df.iloc[i]['seat_capacity']))
         return rooms
 
     def _getMeetingTime(self):
-        meeting_times = []
+        meeting_times: list[MeetingTime] = []
         for i in range(len(self._mtt_df)):
             meeting_times.append(MeetingTime(self._mtt_df.iloc[i]['id'],
                                              self._mtt_df.iloc[i]['day'],
@@ -33,14 +32,14 @@ class Data:
         return meeting_times
 
     def _getInstructor(self):
-        instrucs = []
+        instrucs: list[Instructor] = []
         for i in range(len(self._inst_df)):
             instrucs.append(Instructor(self._inst_df.iloc[i]['id'],
                                        self._inst_df.iloc[i]['professor']))
         return instrucs
     
     def _getCourse(self):
-        courses = []
+        courses: list[Course] = []
         for i in range(len(self._course_df)):
             courses.append(Course(self._course_df.iloc[i]['id'],
                                   self._course_df.iloc[i]['name'],
@@ -51,7 +50,7 @@ class Data:
     def _getDepartmentAndNumberOfClass(self):
         
         # Phase Department
-        dept = []
+        dept: list[Department] = []
         for i in range(len(self._dept_df)):
             course_id = str( self._dept_df.iloc[i]['course_id'] ).split(',') 
             courses = []

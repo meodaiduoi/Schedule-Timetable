@@ -2,7 +2,7 @@
 Date:
 '''
 class Date:
-    def __init__(self, day, time):
+    def __init__(self, day: str, time: str):
         self._day
         self._time
 
@@ -66,14 +66,14 @@ class Course:
     def getMaxStudent(self): return self._max_students
     def getInstructor(self): return self._instructor
     def getName(self): return self._name
-    def __str__(self): return self.name
+    def __str__(self): return self._name
     
 '''
 Deparment:
 
 '''
 class Department:
-    def __init__(self, name: str, course):
+    def __init__(self, name: str, course: list[Course]):
         self._name = name
         self._course = course
 
@@ -87,11 +87,11 @@ After Scheduling we have classes
 class Class:
     def __init__(self, id, department: Department, course: Course) -> None:
         self._id = id
-        self._dept = department
-        self._course = course
-        self._instructor = None
-        self._meeting_time = None
-        self._room = None
+        self._dept: Department = department
+        self._course: Course = course
+        self._instructor: Instructor = None
+        self._meeting_time: MeetingTime = None
+        self._room: Room = None
 
     '''
     Accessor
@@ -114,6 +114,6 @@ class Class:
     toString():
     '''
     def __str__(self):
-        return str(self._dept.getName()) + ',' +str(self._course.getNumber()) + ',' + \
-            str(self._room.getNumber()) + ',' + str(self._instructor.getId()) + ',' + str(self._meeting_time.getId())
+        return str(self._dept.getName()) + ',' +str(self._course.getId()) + ',' + \
+            str(self._room.getId()) + ',' + str(self._instructor.getId()) + ',' + str(self._meeting_time.getId())
        
