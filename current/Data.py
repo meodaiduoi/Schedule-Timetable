@@ -7,23 +7,27 @@ DataPhaser:
 '''
 class DataPhaser:
     
-    def __init__(self, room_csv_path: str, meeting_time_csv_path: str, instructor_csv_path: str):
+    def __init__(self, room_csv_path: str, meeting_time_csv_path: str, instructor_csv_path: str, department_csv_path: str):
         self._room_df = pd.read_csv(room_csv_path)
         self._mtt_df = pd.read_csv(meeting_time_csv_path)
-        self._room_df.head(0)
+        self._instructor_df = pd.read_csv(instructor_csv_path)
+        self._dept_df = pd.read_csv(department_csv_path)
+        
 
         self._room_
     def initilizer(self):
-        for i in _room_df: 
-            room: Room = Room(self._room_df., self._room_df['seat_capacity'][i].values())
-    
+        pass
+        
     def getRoom(self):
-        return room
+        pass
 
     def getMeetingTime(self):
         pass
 
     def getInstructor(self):
+        instructors = []
+        for i in range()
+        instructors.append(Instructor(self._instructor_df.values[0][i], Instructor(self._instructor_df.values[0][i]))
         pass
 
     def getCourse(self):
