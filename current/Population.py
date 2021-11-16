@@ -1,7 +1,7 @@
-from _typeshed import Self
+from Data import Data
 from Schedule import Schedule
 class Population:
-    def __init__(self, size, data):
+    def __init__(self, size, data: Data):
         self._size = size
         self._data = data
         self._schedule = []
