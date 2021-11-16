@@ -73,8 +73,8 @@ Deparment:
 
 '''
 class Department:
-    def __init__(self, id: str, course):
-        self._name = id
+    def __init__(self, name: str, course):
+        self._name = name
         self._course = course
 
     def getName(self): return self._name
