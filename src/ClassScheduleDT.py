@@ -3,14 +3,14 @@ Date:
 '''
 class Date:
     def __init__(self, day: str, time: str):
-        self._day
-        self._time
+        self._day = day
+        self._time = time
 
     def getDate(self):
-        return self._day, self._time
+        return self.day, self.time
 
     def __str__(self):
-        return str('Day: ' + self._day + ' Time' + self._time)
+        return str('Day: ' + self.day + ' Time' + self.time)
 
 '''
 Meeting time

@@ -27,8 +27,7 @@ class Data:
         meeting_times: list[MeetingTime] = []
         for i in range(len(self._mtt_df)):
             meeting_times.append(MeetingTime(self._mtt_df.iloc[i]['id'],
-                                             self._mtt_df.iloc[i]['day'],
-                                             self._mtt_df.iloc[i]['time']))
+                                             Date(self._mtt_df.iloc[i]['day'], self._mtt_df.iloc[i]['time'])))
         return meeting_times
 
     def _getInstructor(self):
@@ -43,7 +42,7 @@ class Data:
         for i in range(len(self._course_df)):
             courses.append(Course(self._course_df.iloc[i]['id'],
                                   self._course_df.iloc[i]['name'],
-                                  self._instrucs[int(self._course_df.iloc[i]['instructor_id'])],
+                                  self._instrucs[int(self._course_df.iloc[i]['instructor_id']) -1],
                                   self._course_df.iloc[i]['max_number_of_students']))
         return courses
 
@@ -55,14 +54,14 @@ class Data:
             course_id = str( self._dept_df.iloc[i]['course_id'] ).split(',') 
             courses = []
             for j in range(len(course_id)):
-                courses.append( self._course[int( course_id[j] )] )
+                courses.append( self._course[int( course_id[j] ) -1] )
             dept.append(Department(self._dept_df.iloc[i]['name'], courses))
             courses = []
         
         # get Number of class
         noc = 0
-        for i in range():
-            noc += len(self._dept[i].getCourse())
+        for i in range(len(dept)):
+            noc += len(dept[i].getCourse())
         return dept, noc
 
     def getRoom(self):
