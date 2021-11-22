@@ -54,7 +54,7 @@ class Schedule:
         depts: list[Department] = self._data.getDepartment()
 
         for i in range(0, len(depts)):
-            course = depts[i].getCourse()
+            course: list[Course] = depts[i].getCourse()
             for j in range(0, len(course)):
                 new_class = Class(self._class_number, depts[i], course[j])
                 self._class_number += 1

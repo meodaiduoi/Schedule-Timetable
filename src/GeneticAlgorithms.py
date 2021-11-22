@@ -42,7 +42,7 @@ class GeneticAlgorithms:
     25:06
     '''
     def _crossoverSchedule(self, schedule1: Schedule, schedule2: Schedule):
-        crossover_schedule: Schedule = Schedule.initialize()
+        crossover_schedule: Schedule = Schedule(self._data).initialize()
         for i in range(0, len(crossover_schedule.getClasses())):
             if (rnd.random() > 0.5):
                 crossover_schedule.getClasses()[i] = schedule1.getClasses()[i]
@@ -67,12 +67,11 @@ class GeneticAlgorithms:
 
         return crossover_pop
     
-    
     '''
 
     '''
     def _mutateSchedule(self, mutate_schedule: Schedule):
-        schedule = Schedule().initialize()
+        schedule = Schedule(self._data).initialize()
         for i in range(len(mutate_schedule.getClasses())):
             if(self._MUTATION_RATE > rnd.random()):
                 mutate_schedule.getClasses()[i] = schedule.getClasses()[i]
@@ -86,7 +85,6 @@ class GeneticAlgorithms:
         for i in range(self._NUMBER_OF_ELITE_SCHEDULES, self._POPULATION_SIZE):
             self._mutateSchedule(pop.getSchedule()[i])
         return pop
-
     
     '''
 
