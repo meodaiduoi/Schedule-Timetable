@@ -40,10 +40,17 @@ class Data:
     def _getCourse(self):
         courses: list[Course] = []
         for i in range(len(self._course_df)):
+            
+            instruc_id = self._course_df.iloc[i]['instructor_id'].split(',') 
+            instruc_list: list[Instructor] = []
+            for j in range(len(instruc_list)):
+                instruc_list.append[self._instrucs[int(instruc_id[j])]]
+            
             courses.append(Course(self._course_df.iloc[i]['id'],
                                   self._course_df.iloc[i]['name'],
-                                  self._instrucs[int(self._course_df.iloc[i]['instructor_id']) -1],
+                                  instruc_list,
                                   self._course_df.iloc[i]['max_number_of_students']))
+            
         return courses
 
     def _getDepartmentAndNumberOfClass(self):
@@ -51,10 +58,12 @@ class Data:
         # Phase Department
         dept: list[Department] = []
         for i in range(len(self._dept_df)):
+            
             course_id = str( self._dept_df.iloc[i]['course_id'] ).split(',') 
             courses = []
             for j in range(len(course_id)):
                 courses.append( self._course[int( course_id[j] ) -1] )
+            
             dept.append(Department(self._dept_df.iloc[i]['name'], courses))
             courses = []
         
