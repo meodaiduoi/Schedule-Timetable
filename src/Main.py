@@ -21,13 +21,16 @@ def Main():
     generticAlogrithm = GeneticAlgorithms(data)
     population = Population(POPULATION_SIZE, data)
     
+    # print(data.getCourse()[0].getInstructor()[2].getName())
+    
     generation = 0
     
-    while (population.getSchedule()[0].getFitness() != 1.0):
-        generation += 1
-        print('Generation: ' + generation)
-        population = generticAlogrithm.evolve(population)
-        population.getSchedule().sort(key=lambda x: x.getFitness(), reverse=True)
+    
+    # while (population.getSchedule()[0].getFitness() != 1.0):
+    #     generation += 1
+    #     print('Generation: ' + generation)
+    #     population = generticAlogrithm.evolve(population)
+    #     population.getSchedule().sort(key=lambda x: x.getFitness(), reverse=True)
     
     return 0
 

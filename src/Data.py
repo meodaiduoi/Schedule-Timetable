@@ -42,15 +42,14 @@ class Data:
         for i in range(len(self._course_df)):
             
             instruc_id = self._course_df.iloc[i]['instructor_id'].split(',') 
-            instruc_list: list[Instructor] = []
-            for j in range(len(instruc_list)):
-                instruc_list.append[self._instrucs[int(instruc_id[j])]]
+            instruc_list = []
+            for j in range(len(instruc_id)):
+                instruc_list.append(self._instrucs[ int(instruc_id[j]) -1 ])
             
             courses.append(Course(self._course_df.iloc[i]['id'],
                                   self._course_df.iloc[i]['name'],
                                   instruc_list,
                                   self._course_df.iloc[i]['max_number_of_students']))
-            
         return courses
 
     def _getDepartmentAndNumberOfClass(self):
@@ -60,12 +59,12 @@ class Data:
         for i in range(len(self._dept_df)):
             
             course_id = str( self._dept_df.iloc[i]['course_id'] ).split(',') 
-            courses = []
+            courses_list = []
             for j in range(len(course_id)):
-                courses.append( self._course[int( course_id[j] ) -1] )
+                courses_list.append( self._course[int( course_id[j] ) -1] )
             
-            dept.append(Department(self._dept_df.iloc[i]['name'], courses))
-            courses = []
+            dept.append(Department(self._dept_df.iloc[i]['name'], courses_list))
+            courses_list = []
         
         # get Number of class
         noc = 0
@@ -75,7 +74,13 @@ class Data:
 
     def getRoom(self):
         return self._room
-
+    
+    def getInstructor(self):
+        return self._instrucs
+    
+    def getCourse(self):
+        return self._course
+    
     def getDepartment(self):
         return self._dept
     
@@ -84,3 +89,5 @@ class Data:
     
     def getNumberOfClass(self):
         return self._noc
+    
+    

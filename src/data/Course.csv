@@ -1,7 +1,16 @@
 id,name,instructor_id,max_number_of_students
 1,Caculus 1,"1,2",30
-2,Caculus 2,"2,2",30
-3,English 1,"3,4",45
-4,English 2,"3,5",45
-5,C++,"4,5",30
-6,Python,"5,5",60
+2,Caculus 2,2,30
+3,English 1,3,45
+4,English 2,"4,5",45
+5,Chinese,"3,5",30
+6,C++,"6,8",60
+7,Web,"7,6",30
+8,Python,7,35
+9,Java,7,40
+10,Mordem Art 1,"9,10",35
+11,Mordem Art 2,10,35
+12,Practical Anotomy,11,55
+13,Table Tennis,"11,12,13",45
+14,Baseball,"11,12",40
+15,Badminton,"11,13",40

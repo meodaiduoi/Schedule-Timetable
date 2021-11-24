@@ -57,15 +57,16 @@ Course:
 
 '''
 class Course:
-    def __init__(self, id, name: str, instructor: Instructor, max_number_of_students: int):
+    def __init__(self, id, name: str, instructor: list[Instructor], max_number_of_students: int):
         self._number = id
         self._name = name
         self._instructor = instructor
         self._max_students = max_number_of_students
 
-    def getMaxStudent(self): return self._max_students
-    def getInstructor(self): return self._instructor
+    def getId(self): return self._number
     def getName(self): return self._name
+    def getInstructor(self): return self._instructor
+    def getMaxStudent(self): return self._max_students
     def __str__(self): return self._name
     
 '''
@@ -85,10 +86,10 @@ Class:
 After Scheduling we have classes
 '''
 class Class:
-    def __init__(self, id, department: Department, course: Course) -> None:
+    def __init__(self, id, department: Department, course: Course):
         self._id = id
-        self._dept: Department = department
-        self._course: Course = course
+        self._dept = department
+        self._course = course
         self._instructor: Instructor = None
         self._meeting_time: MeetingTime = None
         self._room: Room = None
