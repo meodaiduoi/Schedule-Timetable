@@ -35,12 +35,12 @@ class Schedule:
 
         for i in range(0, len(classes)):
             if (classes[i].getRoom().getCapacity() < classes[i].getCourse().getMaxStudent()):
-                self._conflicts +=1
+                self._conflict +=1
 
         for j in range(0, len(classes)):
             if (j >=i):
                 if (classes[i].getMeetingTime() == classes[j].getMeetingTime() and
-                    classes[i].getId(0 != classes[j].getId())):
+                    classes[i].getId() != classes[j].getId()):
 
                     if (classes[i].getRoom() == classes[j].getRoom()):
                         self._conflict += 1
@@ -59,8 +59,8 @@ class Schedule:
                 new_class = Class(self._class_number, depts[i], course[j])
                 self._class_number += 1
 
-                new_class.setRoom(self._data.getMeetingTime()[rnd.randrange(0, len(self._data.getMeetingTime()))])
-                new_class.setMeetingTime(self._data.getRoom()[rnd.randrange(0, len(self._data.getRoom()))])
+                new_class.setRoom(self._data.getRoom()[rnd.randrange(0, len(self._data.getRoom()))])
+                new_class.setMeetingTime(self._data.getMeetingTime()[rnd.randrange(0, len(self._data.getMeetingTime()))])
                 new_class.setInstructor(course[j].getInstructor()[rnd.randrange(0, len(course[j].getInstructor()))])
 
                 self._classes.append(new_class)

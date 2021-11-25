@@ -116,5 +116,4 @@ class Class:
     '''
     def __str__(self):
         return str(self._dept.getName()) + ',' +str(self._course.getId()) + ',' + \
-            str(self._room.getId()) + ',' + str(self._instructor.getId()) + ',' + str(self._meeting_time.getId())
-       
+            str(self._room.getId()) + ',' + str(self._instructor.getId()) + ',' + str(self._meeting_time.getId()) 

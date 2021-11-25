@@ -21,7 +21,7 @@ class GeneticAlgorithms:
     '''
 
     '''
-    def __init__(self, data: Data, population_size= 9, number_of_elite_schedules= 1, tournament_selection_size= 3, muatation_rate= 0):
+    def __init__(self, data: Data, population_size= 9, number_of_elite_schedules= 1, tournament_selection_size= 3, muatation_rate= 0.1):
         self._data = data
         self._POPULATION_SIZE = population_size
         self._NUMBER_OF_ELITE_SCHEDULES = number_of_elite_schedules
