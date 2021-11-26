@@ -1,6 +1,10 @@
 from Data import Data
 from Schedule import Schedule
 from Data import Data
+
+'''
+Population is a Datatype
+'''
 class Population:
     def __init__(self, size, data: Data):
         self._size = size

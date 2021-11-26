@@ -37,7 +37,7 @@ class GeneticAlgorithms:
             tournament_pop.getSchedule().append(pop.getSchedule()[rnd.randrange(0, self._POPULATION_SIZE)])
         tournament_pop.getSchedule().sort(key=lambda x: x.getFitness(), reverse=True)
         return tournament_pop
-    
+
     '''
     25:06
     '''
@@ -48,7 +48,7 @@ class GeneticAlgorithms:
                 crossover_schedule.getClasses()[i] = schedule1.getClasses()[i]
             else:
                 crossover_schedule.getClasses()[i] = schedule2.getClasses()[i]
-        return crossover_schedule          
+        return crossover_schedule
 
     '''
     use:
@@ -66,7 +66,7 @@ class GeneticAlgorithms:
             crossover_pop.getSchedule().append(self._crossoverSchedule(schedule1=sche1, schedule2=sche2))
 
         return crossover_pop
-    
+
     '''
 
     '''
@@ -85,7 +85,7 @@ class GeneticAlgorithms:
         for i in range(self._NUMBER_OF_ELITE_SCHEDULES, self._POPULATION_SIZE):
             self._mutateSchedule(pop.getSchedule()[i])
         return pop
-    
+
     '''
 
     '''
