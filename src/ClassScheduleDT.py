@@ -6,11 +6,14 @@ class Date:
         self._day = day
         self._time = time
 
-    def getDate(self):
-        return self.day, self.time
+    def getDay(self):
+        return self._day
+    
+    def getTime(self):
+        return self._time
 
     def __str__(self):
-        return str('Day: ' + self.day + ' Time' + self.time)
+        return str('Day: ' + self._day + ' Time' + self._time)
 
 '''
 Meeting time
@@ -30,7 +33,7 @@ Room:
     seat_capacity
 '''
 class Room:
-    def __init__(self, id, seat_capacity):
+    def __init__(self, id, seat_capacity: int):
         self._id = id
         self._seet_capacity = seat_capacity
 

@@ -20,7 +20,7 @@ class Data:
         rooms: list[Room] = []
         for i in range(len(self._room_df)):
             rooms.append(Room(self._room_df.iloc[i]['id'],
-                              self._room_df.iloc[i]['seat_capacity']))
+                              int(self._room_df.iloc[i]['seat_capacity'])))
         return rooms
 
     def _getMeetingTime(self):
@@ -49,7 +49,7 @@ class Data:
             courses.append(Course(self._course_df.iloc[i]['id'],
                                   self._course_df.iloc[i]['name'],
                                   instruc_list,
-                                  self._course_df.iloc[i]['max_number_of_students']))
+                                  int( self._course_df.iloc[i]['max_number_of_students'])) )
         return courses
 
     def _getDepartmentAndNumberOfClass(self):
