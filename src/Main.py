@@ -1,8 +1,8 @@
 from Data import Data
-from GeneticAlgorithms import GeneticAlgorithms
-from Schedule import Schedule
-from Population import Population
-from ClassScheduleDT import *
+from FindSolution import FindSolution
+
+import pandas as pd
+
 
 
 def Main():
@@ -19,21 +19,13 @@ def Main():
                 './data/Instructor.csv', './data/Department.csv',
                 './data/Course.csv')
 
-    # data = Data('./data2/Room.csv', './data2/MeetingTime.csv',
-    #             './data2/Instructor.csv', './data2/Department.csv',
-    #             './data2/Course.csv')
+    find_solution = FindSolution(data, POPULATION_SIZE, NUMBER_OF_ELITE_SCHEDULES, TOURNAMENT_SELECTION_SIZE, MUTATION_RATE)
+    timetable = find_solution.getTimeTable()
 
-    generticAlogrithm = GeneticAlgorithms(data)
-    population = Population(POPULATION_SIZE, data)
+    for i in range(len(timetable)):
+        print(timetable[i].__str__())
 
-    generation = 0
-    while (population.getSchedule()[0].getFitness() != 1.0):
-        generation += 1
-        print('Generation: ', generation)
-        population = generticAlogrithm.evolve(population)
-        population.getSchedule().sort(key=lambda x: x.getFitness(), reverse=True)
     return 0
-
 
 if __name__ == '__main__':
     Main()

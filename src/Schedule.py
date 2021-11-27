@@ -42,13 +42,10 @@ class Schedule:
                 if (j >=i):
                     if (classes[i].getMeetingTime() == classes[j].getMeetingTime() and
                         classes[i].getId() != classes[j].getId()):
-                        # print("Class Conflic")
                         if (classes[i].getRoom() == classes[j].getRoom()):
                             self._conflict += 1
-                            # print("Room Conflic")
                         if (classes[i].getInstructor() ==  classes[j].getInstructor()):
                             self._conflict += 1
-                            # print("Instruct Conflic")
         return 1 / (1.0 * self._conflict +1)
 
     def initialize(self):
