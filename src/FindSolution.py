@@ -14,6 +14,7 @@ class FindSolution():
 
         self._generation = []
         self._solution = self._find()
+        self._solution.sort(key=lambda x: x.getMeetingTime().getId())
 
     def _find(self):
 
@@ -28,8 +29,9 @@ class FindSolution():
             self._generation.append(population.getSchedule()[0].getClasses())
 
             generation += 1
-            print('Generation:', generation, 'Fitness:c', population.getSchedule()[0].getFitness())
+            print('Generation:', generation, 'Fitness:', population.getSchedule()[0].getFitness())
 
+        # Sort the solution by meeting time ID
         return population.getSchedule()[0].getClasses()
 
     def getTimeTable(self):

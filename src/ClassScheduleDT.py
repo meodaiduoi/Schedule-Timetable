@@ -1,43 +1,31 @@
 '''
-Date:
+Meeting time
+    sort by id
 '''
-class Date:
-    def __init__(self, day: str, time: str):
+class MeetingTime:
+    def __init__(self, id, day: str, time: str):
+        self._id = id
         self._day = day
         self._time = time
 
-    def getDay(self):
-        return self._day
-    
-    def getTime(self):
-        return self._time
-
-    def __str__(self):
-        return str('Day: ' + self._day + ' Time' + self._time)
-
-'''
-Meeting time
-
-'''
-class MeetingTime:
-    def __init__(self, id, time: Date):
-        self._id = id
-        self._time = time
-
     def getId(self): return self._id
+    def getDay(self): return self._day
     def getTime(self): return self._time
 
 '''
 Room:
     number
+    name
     seat_capacity
 '''
 class Room:
-    def __init__(self, id, seat_capacity: int):
+    def __init__(self, id, name: str, seat_capacity: int):
         self._id = id
+        self._name = name
         self._seet_capacity = seat_capacity
 
     def getId(self): return self._id
+    def getName(self): return self._name
     def getCapacity(self): return self._seet_capacity
 
 '''
@@ -48,13 +36,10 @@ class Instructor:
     def __init__(self, id, name):
         self._id = id
         self._name = name
-        
-    def getId(self):
-        return self._id
-    
-    def getName(self):
-        return self._name
-     
+
+    def getId(self): return self._id
+    def getName(self): return self._name
+
 '''
 Course:
 
@@ -71,7 +56,7 @@ class Course:
     def getInstructor(self): return self._instructor
     def getMaxStudent(self): return self._max_students
     def __str__(self): return self._name
-    
+
 '''
 Deparment:
 
@@ -118,7 +103,7 @@ class Class:
     toString():
     '''
     def __str__(self):
-        return  str(self._dept.getName()) + ', ' + str(self._course.getId()) + ', ' + \
-                str(self._room.getId()) + ', ' + str(self._instructor.getName()) + ', ' + \
-                str(self._meeting_time.getTime().getDay() + ', ' + \
-                str(self._meeting_time.getTime().getTime()))
+        return  str(self._dept.getName()) + ', ' + str(self._course.getName()) + ', ' + \
+                str(self._room.getName()) + ', ' + str(self._instructor.getName()) + ', ' + \
+                str(self._meeting_time.getDay()) + ', ' + \
+                str(self._meeting_time.getTime())

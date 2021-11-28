@@ -22,6 +22,8 @@ def Main():
     find_solution = FindSolution(data, POPULATION_SIZE, NUMBER_OF_ELITE_SCHEDULES, TOURNAMENT_SELECTION_SIZE, MUTATION_RATE)
     timetable = find_solution.getTimeTable()
 
+    timetable.sort(key=lambda x: x.getMeetingTime().getId())
+
     for i in range(len(timetable)):
         print(timetable[i].__str__())
 
