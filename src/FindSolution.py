@@ -1,6 +1,5 @@
 from Data import Data
 from GeneticAlgorithms import GeneticAlgorithms
-from Schedule import Schedule
 from Population import Population
 from ClassScheduleDT import *
 
@@ -12,6 +11,7 @@ class FindSolution():
         self._TOURNAMENT_SELECTION_SIZE = tournament_selection_size
         self._MUTATION_RATE = mutation_rate
 
+        # generation and sorted solution by time
         self._generation = []
         self._solution = self._find()
         self._solution.sort(key=lambda x: x.getMeetingTime().getId())
