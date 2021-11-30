@@ -1,7 +1,14 @@
-(function($) {
+$(document).ready(function() {
 
-	"use strict";
+	$('.burger').click(function(){
+		$('header').toggleClass('clicked');
+	});
 
-	$('[data-toggle="tooltip"]').tooltip()
-
-})(jQuery);
+	$('nav ul li').click(function(){
+		$('nav ul li').removeClass('selected');
+		$('nav ul li').addClass('notselected');
+		$(this).toggleClass('selected');
+		$(this).removeClass('notselected');
+	});
+	
+});

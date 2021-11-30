@@ -1,16 +1,16 @@
-,Department,Course,Instructor,Room,Day,Shift
-0,LANGUAGE,English 2,Thuy Hang,H2.102,MON,4-6
-1,IT,Mordem Art 1,Pham Trung,H1.102,MON,10-12
-2,ART,Table Tennis,So Khanh,H2.103,MON,10-12
-3,ART,Mordem Art 2,Thanh Tu,H2.100,TUE,1-3
-4,IT,Java,Thao Nguyen,H3.100,WED,1-3
-5,MATH,English 1,Ngan Giang,H3.200,WED,10-12
-6,LANGUAGE,Chinese,Ngan Giang,H1.101,WED,13-15
-7,IT,Python,Thao Nguyen,H3.200,WED,13-15
-8,PE,Badminton,So Khanh,H2.101,THU,1-3
-9,IT,Web,Hanh Van,H2.201,THU,7-9
-10,PE,Table Tennis,Hao Nam,H2.102,THU,13-15
-11,MATH,Caculus 2,Thien Ha,H3.300,FRI,10-12
-12,LANGUAGE,C++,Hanh Van,H3.302,SAT,4-6
-13,PE,Practical Anotomy,Hao Nam,H3.100,SAT,7-9
-14,ART,Practical Anotomy,Hao Nam,H3.100,SAT,10-12
+,Shift,Day,Room,Course,Instructor,Department
+0,1-3,MON,H1.103,Mordem Art 1,Thanh Tu,IT
+1,1-3,MON,H1.201,Badminton,So Khanh,PE
+2,13-15,MON,H2.101,Java,Thao Nguyen,IT
+3,1-3,TUE,H1.201,Chinese,Ngan Giang,LANGUAGE
+4,4-6,TUE,H2.103,Table Tennis,So Khanh,ART
+5,7-9,TUE,H3.300,English 1,Ngan Giang,MATH
+6,10-12,TUE,H3.302,Practical Anotomy,Hao Nam,PE
+7,7-9,WED,H3.300,C++,Cong Son,LANGUAGE
+8,10-12,WED,H2.101,English 2,Thu Thuy,LANGUAGE
+9,7-9,THU,H3.200,Practical Anotomy,Hao Nam,ART
+10,1-3,FRI,H1.103,Web,Thao Nguyen,IT
+11,4-6,FRI,H3.100,Mordem Art 2,Thanh Tu,ART
+12,7-9,FRI,H3.100,Caculus 2,Thien Ha,MATH
+13,13-15,FRI,H3.301,Table Tennis,Hao Nam,PE
+14,13-15,SAT,H3.200,Python,Thao Nguyen,IT
