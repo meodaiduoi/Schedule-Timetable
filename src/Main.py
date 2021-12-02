@@ -24,8 +24,31 @@ def Main():
 
     timetable.sort(key=lambda x: x.getMeetingTime().getId())
 
+    department = []
+    course = []
+    instructor = []
+    room = []
+    day = []
+    time = []
+
     for i in range(len(timetable)):
-        print(timetable[i].__str__())
+        department.append(timetable[i].getDept().getName())
+        course.append(timetable[i].getCourse().getName())
+        instructor.append(timetable[i].getInstructor().getName())
+        room.append(timetable[i].getRoom().getName())
+        day.append(timetable[i].getMeetingTime().getDay())
+        time.append(timetable[i].getMeetingTime().getTime())
+
+    timetable_data = { 'Shift': time,
+                        'Day': day,
+                        'Room': room,
+                        'Course': course,
+                        'Instructor': instructor,
+                        'Department': department
+                    }
+
+    timetable_df = pd.DataFrame(data=timetable_data)
+    timetable_df.to_csv('./export/Timetable.csv', sep=',', encoding='utf-8')
 
     return 0
 

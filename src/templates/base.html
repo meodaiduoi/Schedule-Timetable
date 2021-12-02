@@ -21,10 +21,10 @@
 		<nav>
 			<ul>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-				<li><a href="#">Môn học</a>
+				<li><a href="#">Khóa học</a>
 					<ul>
-						<li><a href="{{ url_for('listRoom') }}">Danh sách môn học</a></li>
-						<li><a href="{{ url_for('addRoom') }}">Thêm môn học</a></li>
+						<li><a href="{{ url_for('listCourse') }}">Danh sách khóa học</a></li>
+						<li><a href="{{ url_for('addCourse') }}">Thêm khóa học</a></li>
 					</ul>
 				</li>
 				<li><a href="#">Bộ môn</a>
@@ -41,8 +41,8 @@
 				</li>
 				<li><a href="#">Phòng học</a>
 					<ul>
-						<li><a href="#">Danh sách phòng học</a></li>
-						<li><a href="#">Thêm phòng học</a></li>
+						<li><a href="{{ url_for('listRoom') }}">Danh sách phòng học</a></li>
+						<li><a href="{{ url_for('addRoom') }}">Thêm phòng học</a></li>
 					</ul>
 				</li>
         <li><a href="#">Lịch các tiết học</a></li>
