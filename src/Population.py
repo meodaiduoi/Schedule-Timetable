@@ -3,7 +3,8 @@ from Schedule import Schedule
 from Data import Data
 
 '''
-Population is a Datatype
+POPULATION:
+Initialize a set population of Schedule.
 '''
 class Population:
     def __init__(self, size, data: Data):

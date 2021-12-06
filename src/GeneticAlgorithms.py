@@ -3,23 +3,13 @@ from Schedule import Schedule
 from Data import Data
 
 import random as rnd
-
-'''
-Config:
-
-POPULATION_SIZE = 9
-NUMBER_OF_ELITE_SCHEDULES = 1
-TOURNAMENT_SELECTION_SIZE = 3
-MUTATION_RATE = 0.1
-'''
-
-
-'''
-
-'''
 class GeneticAlgorithms:
     '''
-
+    Config:
+    POPULATION_SIZE = 9
+    NUMBER_OF_ELITE_SCHEDULES = 1
+    TOURNAMENT_SELECTION_SIZE = 3
+    MUTATION_RATE = 0.1
     '''
     def __init__(self, data: Data, population_size= 9, number_of_elite_schedules= 1, tournament_selection_size= 3, muatation_rate= 0.1):
         self._data = data
@@ -29,7 +19,7 @@ class GeneticAlgorithms:
         self._MUTATION_RATE = muatation_rate
 
     '''
-
+    SELECTION:
     '''
     def _selectTournamentPopulation(self, pop: Population):
         tournament_pop = Population(0, self._data)
@@ -39,7 +29,7 @@ class GeneticAlgorithms:
         return tournament_pop
 
     '''
-    25:06
+    CROSSOVER:
     '''
     def _crossoverSchedule(self, schedule1: Schedule, schedule2: Schedule):
         crossover_schedule: Schedule = Schedule(self._data).initialize()
@@ -68,7 +58,11 @@ class GeneticAlgorithms:
         return crossover_pop
 
     '''
+    MUTATION:
+    In certain new offspring formed, some of their genes can be subjected to a mutation with
+    a low random probability. This implies that some of the bits in the bit string can be flipped.
 
+    Mutation occurs to maintain diversity within the population and prevent premature convergence.
     '''
     def _mutateSchedule(self, mutate_schedule: Schedule):
         schedule = Schedule(self._data).initialize()

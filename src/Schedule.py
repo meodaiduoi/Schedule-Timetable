@@ -29,6 +29,13 @@ class Schedule:
             self._is_fitness_changed == False
         return self._fitness
 
+    '''
+    FITNESS FUNCTION:
+    The fitness function determines how fit an individual is (the ability of an individual
+    to compete with other individuals). It gives a fitness score to each individual.
+    The probability that an individual will be selected for reproduction
+    is based on its fitness score.
+    '''
     def calculateFitness(self):
         self._conflict = 0
         classes: list[Class] = self.getClasses()
